@@ -1,9 +1,9 @@
-SELECT  employee.id,employee.name,employee.Salary,employee.Departement_ID 
-  FROM salaries.departement join employee 
-  on departement.ID=Departement_ID
-  group by employee.Departement_ID
-  order by Salary desc
-  ;
-  
+USE salaries;
+SELECT * 
+FROM employee
+	JOIN departement ON employee.Departement_ID = departement.id
+WHERE (employee.Departement_ID, employee.Salary) 
+ IN (SELECT Departement_ID, MAX(Salary)
+	FROM employee
+	GROUP BY Departement_ID);
  
-  

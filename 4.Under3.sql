@@ -1,11 +1,11 @@
-
-SELECT  salaries.departement.id,salaries.departement.name, 
-count(*) as count 
- from salaries.departement join salaries.employee 
-  on departement.ID=Departement_ID
+USE salaries;
+SELECT  salaries.departement.id,salaries.departement.name, count(*) AS count 
+FROM salaries.departement 
+	JOIN salaries.employee 
+ON departement.ID=Departement_ID
   
- group by Departement_ID
- having count<3 or count=null;
+ GROUP BY Departement_ID
+ HAVING count<3 OR count=NULL;
  
   
  

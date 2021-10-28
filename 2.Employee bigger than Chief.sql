@@ -1,3 +1,5 @@
+USE salaries;
 SELECT  salaries.employee.ID,salaries.employee.name
-  FROM salaries.chief join employee on chief.ID=Chief_ID
-  where chief.Salary<employee.Salary;
+FROM salaries.chief 
+		JOIN employee ON chief.ID=Chief_ID
+WHERE chief.Salary<employee.Salary;
